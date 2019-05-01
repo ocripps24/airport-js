@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Airport', function() {
 
   var airport;
@@ -6,6 +8,11 @@ describe('Airport', function() {
   beforeEach(function() {
     airport = new Airport();
     plane = jasmine.createSpy('plane');
+  });
+  describe('Default state', function() {
+    it('has no planes', function() {
+      expect(airport.hangar).toEqual([]);
+    });
   });
 
   describe('land a plane', function() {
